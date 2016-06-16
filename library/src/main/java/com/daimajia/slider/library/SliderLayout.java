@@ -2,7 +2,6 @@ package com.daimajia.slider.library;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.Bundle;
 import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.text.TextUtils;
@@ -48,7 +47,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.logging.Logger;
 
 /**
  * SliderLayout is compound layout. This is combined with {@link com.daimajia.slider.library.Indicators.PagerIndicator}
@@ -727,7 +725,7 @@ public class SliderLayout extends RelativeLayout{
             String key=entry.getKey();
             boolean isContains = false;
             for (SliderInfo info : datas){
-                if (key.equals(info.image)){
+                if (key.equals(info.imageUrl)){
                     isContains = true;
                 }
             }
@@ -743,7 +741,7 @@ public class SliderLayout extends RelativeLayout{
 //然后是添加或更新
 
         for (SliderInfo info : datas){
-            if (sliderViews.get(info.image) == null){//如果集合中没有，就添加
+            if (sliderViews.get(info.imageUrl) == null){//如果集合中没有，就添加
 
                 //  Logger.json(JSON.toJSONString(info));
 
@@ -757,7 +755,7 @@ public class SliderLayout extends RelativeLayout{
                 // initialize a SliderLayout
                 textSliderView
                         .description(info.desc)
-                        .image(info.image)
+                        .image(info.imageUrl)
                         .setScaleType(BaseSliderView.ScaleType.Fit)
                         .setOnSliderClickListener(listener);
 
@@ -765,16 +763,16 @@ public class SliderLayout extends RelativeLayout{
                 textSliderView.bundle(info.bundle);
 
                 addSlider(textSliderView);
-                sliderViews.put(info.image, textSliderView);
+                sliderViews.put(info.imageUrl, textSliderView);
 
 
 
             }else {//如果集合中已经有该图，则更新
 
-                BaseSliderView textSliderView  = sliderViews.get(info.image);
+                BaseSliderView textSliderView  = sliderViews.get(info.imageUrl);
                 textSliderView
                         .description(info.desc)
-                        .image(info.image);
+                        .image(info.imageUrl);
                 textSliderView.bundle(info.bundle);
             }
 

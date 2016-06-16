@@ -7,7 +7,7 @@ import android.os.Bundle;
  */
 public class SliderInfo {
     public String desc;
-    public String image;
+    public String imageUrl;
     public Bundle bundle;
 
 }

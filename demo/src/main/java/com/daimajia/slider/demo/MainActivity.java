@@ -42,24 +42,32 @@ public class MainActivity extends ActionBarActivity implements BaseSliderView.On
         url_maps.put("House of Cards", "http://scimg.jb51.net/allimg/160510/14-1605101555235D.jpg");
         url_maps.put("Game of Thrones", "http://pic20.nipic.com/20120428/5455122_162725484388_2.jpg");*/
 
-        url_maps.put("Hannibal", "http://static-dev.qxinli.com/2016053109261091.jpg");
+       /* url_maps.put("Hannibal", "http://static-dev.qxinli.com/2016053109261091.jpg");
         url_maps.put("Big Bang Theory", "http://static-dev.qxinli.com/2016053109264389.jpg");
         url_maps.put("House of Cards", "http://static-dev.qxinli.com/201605310928527.jpg");
         url_maps.put("Game of Thrones", "http://static-dev.qxinli.com/2016053109293176.jpg");
-        url_maps.put("dsfdsfds", "http://static-dev.qxinli.com/201605310930137.jpg");
+        url_maps.put("dsfdsfds", "http://static-dev.qxinli.com/201605310930137.jpg");*/
 
-        /*HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
+        HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
         file_maps.put("Hannibal",R.drawable.hannibal);
         file_maps.put("Big Bang Theory",R.drawable.bigbang);
         file_maps.put("House of Cards",R.drawable.house);
-        file_maps.put("Game of Thrones", R.drawable.game_of_thrones);*/
+        file_maps.put("Game of Thrones", R.drawable.game_of_thrones);
+        /*List<SliderInfo> infos = new ArrayList<>();
+        SliderInfo info = new SliderInfo();
+        info.desc = "Hannibal";
+        info.imageUrl = */
+
+
+
+      //  mDemoSlider.refreshSlider();
 
         for(String name : url_maps.keySet()){
             TextSliderView textSliderView = new TextSliderView(this);
             // initialize a SliderLayout
             textSliderView
                     .description(name)
-                    .image(url_maps.get(name))
+                    .image(file_maps.get(name))
                     .setScaleType(BaseSliderView.ScaleType.Fit)
                     .setOnSliderClickListener(this);
 
